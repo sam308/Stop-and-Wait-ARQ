@@ -100,7 +100,10 @@ class Channel:
             S2RTList.append(t)
             s_count += 1
             
-        
+        for i in range(constants.TOT_RECEIVER):
+            t = threading.Thread(name = 'AcknowledgementThread' + str(r_count) , target = self.channelR2S , args = (r_count,))
+            R2STList.append(t)
+            r_count += 1 
         
         #Start all the threads
         for thread in S2RTList:
