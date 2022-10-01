@@ -18,6 +18,8 @@ def checkError(dataSegment):
         totCheck += int(y,2)
         if totCheck >= 65535:
             totCheck -= 65535
+        if totCheck <= 0:
+            totCheck = 1
     if totCheck == 0:
         return 1 
     else:
