@@ -29,8 +29,10 @@ class Receiver:
 
         return file
 
-
-    
+    # Function to get the source address of the packet 
+    def getSenderID(self , packet):
+        senderAddress = packet.decodeSourceAddress()
+        return senderAddress
 
     # Function to get the sequence number of the packet
     def getSequenceNumber(self, packet):

@@ -77,7 +77,11 @@ def execute():
     senderProcess = []
     receiverProcess = []
 
+    # Creating a list of all the sender processess
     
+    for i in range(len(senderList)):
+        p = multiprocessing.Process(target=senderList[i].startSending)
+        senderProcess.append(p)
 
     #Creating a list of all the receiver processes
     for i in range(len(receiverList)):
