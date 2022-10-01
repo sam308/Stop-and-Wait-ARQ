@@ -79,13 +79,13 @@ def execute():
 
     # Creating a list of all the sender processess
     
-    for i in range(len(senderList)):
-        p = multiprocessing.Process(target=senderList[i].startSending)
+    for sender in senderList:
+        p = multiprocessing.Process(target=sender.startSending)
         senderProcess.append(p)
 
     #Creating a list of all the receiver processes
-    for i in range(len(receiverList)):
-        p = multiprocessing.Process(target=receiverList[i].startReceiving)
+    for receiver in receiverList:
+        p = multiprocessing.Process(target=receiver.startReceiving)
         receiverProcess.append(p)
     
     #Store the channel process
