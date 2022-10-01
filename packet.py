@@ -11,6 +11,9 @@ class Packet:
 
     def decodeLength(self):
         return len(self.segmentData)
+    
+    def getSegmentData(self):
+        return self.segmentData
 
     def decodeSeqNo(self):
         seqNo = self.packet[192:200]
