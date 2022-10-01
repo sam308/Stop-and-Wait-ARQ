@@ -39,7 +39,14 @@ class Sender:
         return rec
 
         
-    
+    # Function to get the file handle for input file
+    def openFile(self, filename):
+        try:
+            file = open(filename, 'r')
+        except IOError:
+            sys.exit("FILE NON EXISTANT!")
+        return file
+
     #Function to resend the current packet because acknowledgement is not received for it
     def resendCurrentPacket(self):
         self.senderToChannel.send(self.currentPacket)
