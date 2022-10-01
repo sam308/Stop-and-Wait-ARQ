@@ -28,6 +28,10 @@ class Receiver:
             sys.exit("FILE NON EXISTANT!")
 
         return file
+    
+    # Get the name of the receiver
+    def getName(self):
+        return self.name
 
     # Function to get the source address of the packet 
     def getSenderID(self , packet):
